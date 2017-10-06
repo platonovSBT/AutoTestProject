@@ -4,14 +4,12 @@
  * and open the template in the editor.
  */
 
+import org.junit.Before;
+import org.junit.Test;
+
 import java.awt.*;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  *
@@ -29,7 +27,7 @@ public class LineTest {
     @Before
     public void initialize()
     {
-        exLine=new Line(0,0, Color.BLUE,2,2);
+        exLine=new Line(0,0, Color.BLUE,3,4);
     }
 
 
@@ -38,10 +36,7 @@ public class LineTest {
      */
     @Test
     public void testGetX2() {
-        System.out.println("getX2");
-        int expResult = 2;
-        int result = exLine.getX2();
-        assertEquals(expResult, result);
+        assertEquals("Неверное значение в Line.getX2()",3, exLine.getX2());
     }
 
     /**
@@ -49,10 +44,7 @@ public class LineTest {
      */
     @Test
     public void testGetY2() {
-        System.out.println("getY2");
-        int expResult = 2;
-        int result = exLine.getY2();
-        assertEquals(expResult, result);
+        assertEquals("Неверное значение в Line.getY2()",4, exLine.getY2());
     }
 
     /**
@@ -65,7 +57,7 @@ public class LineTest {
         Line instance = new Line();
         instance.draw(g);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -73,10 +65,7 @@ public class LineTest {
      */
     @Test
     public void testToString() {
-        System.out.println("toString");
-        String expResult = "java.awt.Color[r=0,g=0,b=255], X: 0, Y: 0 ,X2:2, Y2:2";
-        String result = exLine.toString();
-        assertEquals(expResult, result);
+        assertEquals("Неверное значение в Line.toString()","Linecolor: java.awt.Color[r=0,g=0,b=255], X: 0, Y: 0 ,X2:3, Y2:4",  exLine.toString());
     }
 
     /**
@@ -84,11 +73,7 @@ public class LineTest {
      */
     @Test
     public void testLineLenght() {
-        System.out.println("lineLenght");
-        double expResult = 0.0;
-        double result = exLine.lineLenght();
-        assertEquals(expResult, result, 0.0);
-
+        assertEquals("Неверное значение в Line.lineLenght()",5.1, exLine.lineLenght(),0.1);
     }
     
 }

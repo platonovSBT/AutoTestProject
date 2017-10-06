@@ -4,22 +4,14 @@
  * and open the template in the editor.
  */
 
-import java.awt.*;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
+import java.awt.*;
 import java.util.Arrays;
 import java.util.Collection;
 
-import org.junit.Test;
-import org.junit.Before;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
-import org.junit.runner.RunWith;
 import static org.junit.Assert.assertEquals;
 /**
  *
@@ -54,16 +46,14 @@ public class OvalTestWithParameters {
      */
     @Test
     public void testGetWidth() {
-        System.out.println("Результаты проверки метода getWidth:");
-        assertEquals(expectedOval.getWidth(), inputOval.getWidth());
+        assertEquals("Неверное значение в Oval.getWidth()",expectedOval.getWidth(), inputOval.getWidth());
     }
     /**
      * Test of getHeight method, of class Oval.
      */
     @Test
     public void testGetHeight() {
-        System.out.println("Результаты проверки метода getHeight:");
-        assertEquals(expectedOval.getHeight(), inputOval.getHeight());
+        assertEquals("Неверное значение в Oval.getHeight()",expectedOval.getHeight(), inputOval.getHeight());
     }
 
     /**
@@ -71,8 +61,7 @@ public class OvalTestWithParameters {
      */
     @Test
     public void testSquare() {
-        System.out.println("Результаты проверки метода square:");
-        assertEquals(expectedOval.square(), inputOval.square(),0.0);
+        assertEquals("Неверное значение в Oval.square()",expectedOval.square(), inputOval.square(),0.0);
     }
 
     /**
@@ -80,8 +69,7 @@ public class OvalTestWithParameters {
      */
     @Test
     public void testPerimetr() {
-        System.out.println("Результаты проверки метода perimetr:");
-        assertEquals(expectedOval.square(), inputOval.square(),0.0);
+        assertEquals("Неверное значение в Oval.perimter()",expectedOval.perimetr(), inputOval.perimetr(),0.0);
     }
 
     /**
@@ -89,8 +77,7 @@ public class OvalTestWithParameters {
      */
     @Test
     public void testToString() {
-        System.out.println("Результаты проверки метода toString:");
-        assertEquals(expectedOval.toString(), inputOval.toString());
+        assertEquals("Неверное значение в Oval.perimter()",expectedOval.toString(), inputOval.toString());
     }
     
 }

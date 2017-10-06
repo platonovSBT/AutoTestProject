@@ -42,6 +42,11 @@ public class Line extends Form {
         g.drawLine(x,x2,y,y2);
         g.setColor(oldColor);
     }
+    @Override
+    public void fill(Graphics g)
+    {
+        System.out.println("Это же линия,Карл! Какая еще закраска?");
+    }
 
     @Override
     public String toString()

@@ -40,6 +40,13 @@ public class Rectangle extends Form {
         g.setColor(oldColor);
     }
     @Override
+    public void fill(Graphics g) {
+        Color oldColor=g.getColor();
+        g.setColor(color);
+        g.fillRect(x,y,width,heigth);
+        g.setColor(oldColor);
+    }
+    @Override
     public double square() {
         return width*heigth;
     }

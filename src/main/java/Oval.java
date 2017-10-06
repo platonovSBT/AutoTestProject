@@ -40,6 +40,14 @@ public class Oval extends Form {
         g.setColor(oldColor);
     }
     @Override
+    public void fill(Graphics g)
+    {
+        Color oldColor=g.getColor();
+        g.setColor(color);
+        g.fillOval(x-width/2,y-height/2,width,height);
+        g.setColor(oldColor);
+    }
+    @Override
     public double square() {
         return Math.PI*width*height/4;
     }

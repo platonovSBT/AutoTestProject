@@ -42,8 +42,10 @@ public abstract class Form {
 
     //####### Methods ############
     public abstract void draw(Graphics g);
+    public abstract void fill(Graphics g);
     public double square() {return 0;}
     public double perimetr() {return  0;}
+
 
     //######### OverrideBlock ##########
     @Override

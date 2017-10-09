@@ -36,7 +36,7 @@ public class Oval extends Form {
     public void draw(Graphics g) {
         Color oldColor=g.getColor();
         g.setColor(color);
-        g.drawOval(x-width/2,y-height/2,width,height);
+        g.drawOval(x - width / 2,y - height / 2,width,height);
         g.setColor(oldColor);
     }
     @Override
@@ -44,21 +44,21 @@ public class Oval extends Form {
     {
         Color oldColor=g.getColor();
         g.setColor(color);
-        g.fillOval(x-width/2,y-height/2,width,height);
+        g.fillOval(x - width / 2,y - height / 2,width,height);
         g.setColor(oldColor);
     }
     @Override
     public double square() {
-        return Math.PI*width*height/4;
+        return Math.PI * width * height / 4;
     }
     @Override
     public double perimetr() {
-        return  Math.PI*(width+height)/2;
+        return  Math.PI * (width + height) / 2;
     }
     @Override
     public String toString()
     {
-        return super.toString()+" ,Height:"+height+" ,Width: "+width;
+        return super.toString() + " ,Height:" + height + " ,Width: " + width;
     }
 
 }

@@ -51,11 +51,11 @@ public class Line extends Form {
     @Override
     public String toString()
     {
-        return super.toString()+" ,X2:"+x2+", Y2:"+y2;
+        return super.toString() + " ,X2:" + x2 + ", Y2:" + y2;
     }
     //######## Methods #########
     public double lineLenght()
     {
-        return Math.hypot((x2-x),(y2-y));
+        return Math.hypot((x2 - x),(y2 - y));
     }
 }

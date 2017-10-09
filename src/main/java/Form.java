@@ -51,6 +51,6 @@ public abstract class Form {
     @Override
     public String toString()
     {
-        return getClass().getSimpleName()+"color: "+color+", X: "+x+", Y: "+y;
+        return getClass().getSimpleName() + "color: " + color + ", X: " + x + ", Y: " + y;
     }
 }

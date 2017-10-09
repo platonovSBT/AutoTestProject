@@ -10,6 +10,7 @@ import org.junit.Test;
 import java.awt.*;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 /**
  *
@@ -57,7 +58,7 @@ public class LineTest {
         Line instance = new Line();
         instance.draw(g);
         // TODO review the generated test code and remove the default call to fail.
-
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -65,7 +66,7 @@ public class LineTest {
      */
     @Test
     public void testToString() {
-        assertEquals("Неверное значение в Line.toString()","Linecolor: java.awt.Color[r=0,g=0,b=255], X: 0, Y: 0 ,X2:3, Y2:4",  exLine.toString());
+        assertEquals("Неверное значение в Line.toString()!","Linecolor: java.awt.Color[r=0,g=0,b=255], X: 0, Y: 0 ,X2:3, Y2:4",  exLine.toString());
     }
 
     /**
@@ -73,7 +74,7 @@ public class LineTest {
      */
     @Test
     public void testLineLenght() {
-        assertEquals("Неверное значение в Line.lineLenght()",5.1, exLine.lineLenght(),0.1);
+        assertEquals("Неверное значение в Line.lineLenght()!",5.1, exLine.lineLenght(),0.1);
     }
     
 }

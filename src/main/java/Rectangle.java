@@ -48,16 +48,16 @@ public class Rectangle extends Form {
     }
     @Override
     public double square() {
-        return width*heigth;
+        return width * heigth;
     }
     @Override
     public double perimetr() {
-        return  (heigth+width)*2;
+        return  (heigth + width) * 2;
     }
     @Override
     public String toString()
     {
-        return super.toString()+" ,Height:"+heigth+" ,Width: "+width;
+        return super.toString() + " ,Height:" + heigth + " ,Width: " + width;
     }
 
 }

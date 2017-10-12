@@ -2,8 +2,8 @@ import java.awt.*;
 
 public class Oval extends Form {
     //####### Fields #############
-    protected int width; //ширина
-    protected int height; //высота
+    private int width; //ширина
+    private int height; //высота
 
     //######### Constructors ############
     public Oval() {
@@ -35,16 +35,16 @@ public class Oval extends Form {
     @Override
     public void draw(Graphics g) {
         Color oldColor=g.getColor();
-        g.setColor(color);
-        g.drawOval(x - width / 2,y - height / 2,width,height);
+        g.setColor(getColor());
+        g.drawOval(getX() - width / 2,getY() - height / 2,width,height);
         g.setColor(oldColor);
     }
     @Override
     public void fill(Graphics g)
     {
         Color oldColor=g.getColor();
-        g.setColor(color);
-        g.fillOval(x - width / 2,y - height / 2,width,height);
+        g.setColor(getColor());
+        g.fillOval(getX() - width / 2,getY() - height / 2,width,height);
         g.setColor(oldColor);
     }
     @Override
@@ -60,5 +60,20 @@ public class Oval extends Form {
     {
         return super.toString() + " ,Height:" + height + " ,Width: " + width;
     }
-
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Oval other = (Oval) obj;
+        if (width != other.width)
+            return false;
+        if (height != other.height)
+            return false;
+        return true;
+    }
 }

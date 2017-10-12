@@ -2,8 +2,8 @@ import java.awt.*;
 
 public class Rectangle extends Form {
     //####### Fields #############
-    protected int width; // ширина
-    protected int heigth; // высота
+    private int width; // ширина
+    private int heigth; // высота
 
     //####### Constructors ########
 
@@ -35,15 +35,15 @@ public class Rectangle extends Form {
     @Override
     public void draw(Graphics g) {
         Color oldColor=g.getColor();
-        g.setColor(color);
-        g.drawRect(x,y,width,heigth);
+        g.setColor(getColor());
+        g.drawRect(getX(),getY(),width,heigth);
         g.setColor(oldColor);
     }
     @Override
     public void fill(Graphics g) {
         Color oldColor=g.getColor();
-        g.setColor(color);
-        g.fillRect(x,y,width,heigth);
+        g.setColor(getColor());
+        g.fillRect(getX(),getY(),width,heigth);
         g.setColor(oldColor);
     }
     @Override
@@ -58,6 +58,22 @@ public class Rectangle extends Form {
     public String toString()
     {
         return super.toString() + " ,Height:" + heigth + " ,Width: " + width;
+    }
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Rectangle other = (Rectangle) obj;
+        if (width != other.width)
+            return false;
+        if (heigth != other.heigth)
+            return false;
+        return true;
     }
 
 }

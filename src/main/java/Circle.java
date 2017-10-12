@@ -11,52 +11,67 @@ public class Circle extends Oval {
     //####### Implements Methods of Oval ###########
     public double getRadius()
     {
-        return width / 2;
+        return getWidth() / 2;
     }
     public void setRadius(double r)
     {
-        width= (int) (2 * r);
-        height= (int) (2 * r);
+        setWidth((int) (2 * r));
+        setHeight ((int) (2 * r));
     }
 
     @Override
     public void setWidth(int width) {
-        this.width=width;
-        height=width;
-
+        setHeight(width);
+        setWidth(width);
     }
 
     @Override
     public void setHeight(int height) {
-        width=height;
-        this.height=height;
+        setHeight(height);
+        setWidth(height);
     }
     //####### Implements Methods of Form ###########
     @Override
     public void draw(Graphics g) {
         Color oldColor=g.getColor();
-        g.setColor(color);
-        g.drawOval(x - width / 2,y - height / 2,width,height);
+        g.setColor(getColor());
+        g.drawOval(getX() - getHeight() / 2,getY() - getHeight() / 2,getWidth(),getHeight());
         g.setColor(oldColor);
     }
     @Override
     public void fill(Graphics g){
         Color oldColor=g.getColor();
-        g.setColor(color);
-        g.fillOval(x - width / 2,y - height / 2,width,height);
+        g.setColor(getColor());
+        g.fillOval(getX() - getWidth() / 2,getY() - getHeight() / 2,getWidth(),getHeight());
         g.setColor(oldColor);
     }
     @Override
     public double square() {
-        return Math.PI * width * height / 4;
+        return Math.PI * getWidth() * getHeight() / 4;
     }
     @Override
     public double perimetr() {
-        return  Math.PI * (width + height) / 2;
+        return  Math.PI * (getWidth() + getHeight()) / 2;
     }
     @Override
     public String toString()
     {
-        return super.toString() + " ,radius:" + height / 2;
+        return super.toString() + " ,radius:" + getHeight() / 2;
+    }
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Circle other = (Circle) obj;
+        if (getWidth() != other.getRadius())
+            return false;
+        if (getHeight() != other.getRadius())
+            return false;
+        return true;
     }
 }

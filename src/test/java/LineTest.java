@@ -10,7 +10,7 @@ import org.junit.Test;
 import java.awt.*;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertTrue;
 
 /**
  *
@@ -53,12 +53,11 @@ public class LineTest {
      */
     @Test
     public void testDraw() {
-        System.out.println("draw");
-        Graphics g = null;
-        Line instance = new Line();
-        instance.draw(g);
+        Line instance = new Line(0,0, Color.BLUE,3,4);
+        assertTrue("Объекты не эквивалентны!", exLine.equals(instance));
+
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**

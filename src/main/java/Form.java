@@ -2,9 +2,9 @@ import java.awt.*;
 
 public abstract class Form {
     //###### Fields ##########
-    protected int x; //координата по оси У
-    protected int y; //координата по оси У
-    protected Color color; //цвет
+    private int x; //координата по оси У
+    private int y; //координата по оси У
+    private Color color; //цвет
     //####### Constructors ########
     public Form() {
     }
@@ -53,4 +53,24 @@ public abstract class Form {
     {
         return getClass().getSimpleName() + "color: " + color + ", X: " + x + ", Y: " + y;
     }
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Form other = (Form) obj;
+        if (x != other.getX())
+            return false;
+        if (y != other.getY())
+            return false;
+        if (color != other.getColor())
+            return false;
+        return true;
+    }
+
+
 }

@@ -1,3 +1,5 @@
+package first_lab;
+
 import java.awt.*;
 
 public class Line extends Form {
@@ -33,7 +35,7 @@ public class Line extends Form {
         this.y2 = y2;
     }
 
-    //######## Implements Methods of Form #########
+    //######## Implements Methods of first_lab.Form #########
 
     @Override
     public void draw(Graphics g) {

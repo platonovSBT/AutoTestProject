@@ -1,9 +1,10 @@
-/*
+package test_first_lab;/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
+import first_lab.Line;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -33,23 +34,23 @@ public class LineTest {
 
 
     /**
-     * Test of getX2 method, of class Line.
+     * Test of getX2 method, of class first_lab.Line.
      */
     @Test
     public void testGetX2() {
-        assertEquals("Неверное значение в Line.getX2()",3, exLine.getX2());
+        assertEquals("Неверное значение в first_lab.Line.getX2()",3, exLine.getX2());
     }
 
     /**
-     * Test of getY2 method, of class Line.
+     * Test of getY2 method, of class first_lab.Line.
      */
     @Test
     public void testGetY2() {
-        assertEquals("Неверное значение в Line.getY2()",4, exLine.getY2());
+        assertEquals("Неверное значение в first_lab.Line.getY2()",4, exLine.getY2());
     }
 
     /**
-     * Test of draw method, of class Line.
+     * Test of draw method, of class first_lab.Line.
      */
     @Test
     public void testDraw() {
@@ -61,19 +62,19 @@ public class LineTest {
     }
 
     /**
-     * Test of toString method, of class Line.
+     * Test of toString method, of class first_lab.Line.
      */
     @Test
     public void testToString() {
-        assertEquals("Неверное значение в Line.toString()!","Linecolor: java.awt.Color[r=0,g=0,b=255], X: 0, Y: 0 ,X2:3, Y2:4",  exLine.toString());
+        assertEquals("Неверное значение в first_lab.Line.toString()!","Linecolor: java.awt.Color[r=0,g=0,b=255], X: 0, Y: 0 ,X2:3, Y2:4",  exLine.toString());
     }
 
     /**
-     * Test of lineLenght method, of class Line.
+     * Test of lineLenght method, of class first_lab.Line.
      */
     @Test
     public void testLineLenght() {
-        assertEquals("Неверное значение в Line.lineLenght()!",5.1, exLine.lineLenght(),0.1);
+        assertEquals("Неверное значение в first_lab.Line.lineLenght()!",5.1, exLine.lineLenght(),0.1);
     }
     
 }

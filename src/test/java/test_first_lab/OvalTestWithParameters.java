@@ -1,9 +1,10 @@
-/*
+package test_first_lab;/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
+import first_lab.Oval;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -46,7 +47,7 @@ public class OvalTestWithParameters {
         });
     }
     /**
-     * Test of getWidth method, of class Oval.
+     * Test of getWidth method, of class first_lab.Oval.
      */
     @Test
     public void testDraw() {
@@ -54,42 +55,42 @@ public class OvalTestWithParameters {
     }
 
     /**
-     * Test of getWidth method, of class Oval.
+     * Test of getWidth method, of class first_lab.Oval.
      */
     @Test
     public void testGetWidth() {
-        assertEquals("Неверное значение в Oval.getWidth()",expectedOval.getWidth(), inputOval.getWidth());
+        assertEquals("Неверное значение в first_lab.Oval.getWidth()",expectedOval.getWidth(), inputOval.getWidth());
     }
     /**
-     * Test of getHeight method, of class Oval.
+     * Test of getHeight method, of class first_lab.Oval.
      */
     @Test
     public void testGetHeight() {
-        assertEquals("Неверное значение в Oval.getHeight()",expectedOval.getHeight(), inputOval.getHeight());
+        assertEquals("Неверное значение в first_lab.Oval.getHeight()",expectedOval.getHeight(), inputOval.getHeight());
     }
 
     /**
-     * Test of square method, of class Oval.
+     * Test of square method, of class first_lab.Oval.
      */
     @Test
     public void testSquare() {
-        assertEquals("Неверное значение в Oval.square()",expectedOval.square(), inputOval.square(),0.0);
+        assertEquals("Неверное значение в first_lab.Oval.square()",expectedOval.square(), inputOval.square(),0.0);
     }
 
     /**
-     * Test of perimetr method, of class Oval.
+     * Test of perimetr method, of class first_lab.Oval.
      */
     @Test
     public void testPerimetr() {
-        assertEquals("Неверное значение в Oval.perimetr()",expectedOval.perimetr(), inputOval.perimetr(),0.0);
+        assertEquals("Неверное значение в first_lab.Oval.perimetr()",expectedOval.perimetr(), inputOval.perimetr(),0.0);
     }
 
     /**
-     * Test of toString method, of class Oval.
+     * Test of toString method, of class first_lab.Oval.
      */
     @Test
     public void testToString() {
-        assertEquals("Неверное значение в Oval.toString()",expectedOval.toString(), inputOval.toString());
+        assertEquals("Неверное значение в first_lab.Oval.toString()",expectedOval.toString(), inputOval.toString());
     }
     
 }

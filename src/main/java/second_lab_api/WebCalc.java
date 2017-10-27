@@ -1,13 +1,9 @@
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.DomDriver;
+package second_lab_api;
 
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import java.io.File;
 import java.io.IOException;
 
 @XmlRootElement(name = "webcalc")
@@ -61,7 +57,7 @@ public class WebCalc
      */
     @Override
     public String toString() {
-        return "WebCalc{" +
+        return "second_lab_api.WebCalc{" +
                 "result: " + getResult()  +", " +
                 "expression{: " +
                 "operand1: " + expression.getOperand1() + ", " +
@@ -71,24 +67,7 @@ public class WebCalc
                 "success: " + isSuccess() +
                 "}";
     }
-    //########## Marshalling ##############
-    public static void marshaller(WebCalc webCalc,String nameXmlFile) throws IOException
-    {
-        XStream xStream=new XStream(new DomDriver());
-        xStream.alias(nameXmlFile, WebCalc.class);
-        xStream.processAnnotations(WebCalc.class);
-    }
-
-    //########### Unmarshaling #############
-
-    public static Object getObject(File file, Class c) throws JAXBException {
-        JAXBContext context = JAXBContext.newInstance(c);
-        Unmarshaller unmarshaller = context.createUnmarshaller();
-        Object object = unmarshaller.unmarshal(file);
-
-        return object;
-    }
-    //############ Main ##############
+    //############ first_lab.Main ##############
     public static void main(String[] args) throws IOException, ClassNotFoundException, JAXBException {
         Expression inCalc=new Expression("1","mult","2");
         HttpConnection connection=new HttpConnection("POST");
@@ -98,8 +77,8 @@ public class WebCalc
         //String nameXmlFile = "webcalc";
        // marshaller(inCalc, nameXmlFile);
 
-        WebCalc exCalc =(WebCalc)  getObject(new File("Response.xml"), WebCalc.class);
-      //  WebCalc exCalc = unmarshalling(new File("Response.xml"));
+        WebCalc exCalc =(WebCalc)  ConvertData.getObject(str, WebCalc.class);
+      //  second_lab_api.WebCalc exCalc = unmarshalling(new File("Response.xml"));
         System.out.println(exCalc.toString());
 
     }

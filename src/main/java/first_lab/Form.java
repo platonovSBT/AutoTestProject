@@ -1,3 +1,5 @@
+package first_lab;
+
 import java.awt.*;
 
 public abstract class Form {

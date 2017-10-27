@@ -1,20 +1,22 @@
+package first_lab;
+
 import java.awt.*;
 
-public class Rectangle extends Form {
+public class Oval extends Form {
     //####### Fields #############
-    private int width; // ширина
-    private int heigth; // высота
+    private int width; //ширина
+    private int height; //высота
 
-    //####### Constructors ########
+    //######### Constructors ############
+    public Oval() {
+    }
 
-    public Rectangle() {}
-
-    public Rectangle(int x, int y, Color color, int width, int heigth) {
+    public Oval(int x, int y, Color color, int width, int height) {
         super(x, y, color);
         this.width = width;
-        this.heigth = heigth;
+        this.height = height;
     }
-    //####### Getters & Setters ########
+    //####### Getters & Setters ###########
     public int getWidth() {
         return width;
     }
@@ -23,41 +25,42 @@ public class Rectangle extends Form {
         this.width = width;
     }
 
-    public int getHeigth() {
-        return heigth;
+    public int getHeight() {
+        return height;
     }
 
-    public void setHeigth(int heigth) {
-        this.heigth = heigth;
+    public void setHeight(int height) {
+        this.height = height;
     }
 
-    //####### Implements Methods of Form ###########
+    //####### Implements Methods of first_lab.Form ###########
     @Override
     public void draw(Graphics g) {
         Color oldColor=g.getColor();
         g.setColor(getColor());
-        g.drawRect(getX(),getY(),width,heigth);
+        g.drawOval(getX() - width / 2,getY() - height / 2,width,height);
         g.setColor(oldColor);
     }
     @Override
-    public void fill(Graphics g) {
+    public void fill(Graphics g)
+    {
         Color oldColor=g.getColor();
         g.setColor(getColor());
-        g.fillRect(getX(),getY(),width,heigth);
+        g.fillOval(getX() - width / 2,getY() - height / 2,width,height);
         g.setColor(oldColor);
     }
     @Override
     public double square() {
-        return width * heigth;
+        return Math.PI * width * height / 4;
     }
     @Override
     public double perimetr() {
-        return  (heigth + width) * 2;
+        return  Math.PI * (width + height) / 2;
     }
     @Override
     public String toString()
     {
-        return super.toString() + " ,Height:" + heigth + " ,Width: " + width;
+        return super.toString() + " ,Height:" + height + " ,Width: " + width;
     }
     @Override
     public boolean equals(Object obj)
@@ -68,12 +71,11 @@ public class Rectangle extends Form {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Rectangle other = (Rectangle) obj;
+        Oval other = (Oval) obj;
         if (width != other.width)
             return false;
-        if (heigth != other.heigth)
+        if (height != other.height)
             return false;
         return true;
     }
-
 }

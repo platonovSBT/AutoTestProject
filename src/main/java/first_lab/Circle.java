@@ -1,3 +1,5 @@
+package first_lab;
+
 import java.awt.*;
 
 public class Circle extends Oval {
@@ -8,7 +10,7 @@ public class Circle extends Oval {
     public Circle(int x, int y, Color color, int r) {
         super(x, y, color, 2 * r, 2 * r);
     }
-    //####### Implements Methods of Oval ###########
+    //####### Implements Methods of first_lab.Oval ###########
     public double getRadius()
     {
         return getWidth() / 2;
@@ -30,7 +32,7 @@ public class Circle extends Oval {
         setHeight(height);
         setWidth(height);
     }
-    //####### Implements Methods of Form ###########
+    //####### Implements Methods of first_lab.Form ###########
     @Override
     public void draw(Graphics g) {
         Color oldColor=g.getColor();

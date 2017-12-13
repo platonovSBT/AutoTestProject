@@ -5,8 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class MyWebDriver
@@ -15,15 +19,47 @@ public class MyWebDriver
 
     private static WebElement loginTextbox, pwdTextbox, enterButton, writeLetterButton;
 
-    private static final String url="https://mail.ru/";
+    private static String url;
 
-    private static final String login="ashot.akapyan1975";
+    private static String login;
 
-    private static final String pwd="pwd1234567890";
+    private static String pwd;
 
-    private static final String pathToDriver="C:\\Users\\sbt-platonov-aa\\myProgramm\\Java\\IEdriver\\IEDriverServer.exe";
+    private static String pathToDriver;
 
     private static SimpleDateFormat dateFormat;
+
+    public static String getUrl() {
+        return url;
+    }
+
+    public static void setUrl(String url) {
+        MyWebDriver.url = url;
+    }
+
+    public static String getLogin() {
+        return login;
+    }
+
+    public static void setLogin(String login) {
+        MyWebDriver.login = login;
+    }
+
+    public static String getPwd() {
+        return pwd;
+    }
+
+    public static void setPwd(String pwd) {
+        MyWebDriver.pwd = pwd;
+    }
+
+    public static String getPathToDriver() {
+        return pathToDriver;
+    }
+
+    public static void setPathToDriver(String pathToDriver) {
+        MyWebDriver.pathToDriver = pathToDriver;
+    }
 
     public static SimpleDateFormat getDateFormat() {
         return dateFormat;
@@ -90,7 +126,20 @@ public class MyWebDriver
         return answer;
     }
 
-    public static void main(String[] args) {
+    private static void initialise() throws IOException {
+        Properties conf = new Properties();
+        conf.load(new FileInputStream(new File("config/properties.ini")));
+
+        setUrl(conf.getProperty("url"));
+        setLogin(conf.getProperty("login"));
+        setPwd(conf.getProperty("pwd"));
+        setPathToDriver(conf.getProperty("pathToDriver"));
+
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        initialise();
 
         System.setProperty("webdriver.ie.driver", pathToDriver);
 

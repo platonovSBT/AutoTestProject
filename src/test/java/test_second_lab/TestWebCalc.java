@@ -51,7 +51,7 @@ public class TestWebCalc {
                 {  "25","div","afafsa", "5"}
         });
     }
-    @Before
+
     public  void init() throws MalformedURLException {
         connection=new HttpConnection("POST");
     }
